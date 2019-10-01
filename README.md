@@ -1,13 +1,13 @@
 # FunWithGit _(Game Name)_
 
-### _(Team Name)_
+### Hell Yeah
 
 | Version Control Master | Scrum Master    |
 | ---------------------- | --------------- |
-| Name                   | Name            |
-| RIT username           | RIT username    |
-| Discord name           | Discord name    |
-| GitHub username        | GitHub username |
+| Jae Pagulayan          | Raman Mandavia  |
+| jup6039                | rcm4155         |
+| SFGxGamer              | Raman (rcm4155) |
+| jup6039                | RamanMandavia   |
 
 #### Keywords
 
