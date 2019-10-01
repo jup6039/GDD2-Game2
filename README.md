@@ -1,4 +1,3 @@
-# GDD2-Game2
 # FunWithGit _(Game Name)_
 
 ### _(Team Name)_
