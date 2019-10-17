@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
@@ -102,6 +103,11 @@ public class SceneHandler : MonoBehaviour
                             nameText.text = "Superman Jones";
                             CheckClick();
                             break;
+                        case 13:
+                            text.text = dialogue[line];
+                            nameText.text = "";
+                            CheckSceneEnd();
+                            break;
                         case 16:
                             text.text = dialogue[line];
                             nameText.text = "Superman Jones";
@@ -112,6 +118,11 @@ public class SceneHandler : MonoBehaviour
                             nameText.text = "Superman Jones";
                             CheckClick();
                             break;
+                        case 19:
+                            text.text = dialogue[line];
+                            nameText.text = "";
+                            CheckSceneEnd();
+                            break;
                         case 22:
                             nameText.text = "";
                             //button1.SetActive(true);
@@ -120,6 +131,16 @@ public class SceneHandler : MonoBehaviour
                             //button2.SetActive(true);
                             choice2.text = "Ask about Superman's Halloween costume.";
                             CheckChoiceSelect(23, 26);
+                            break;
+                        case 24:
+                            text.text = dialogue[line];
+                            nameText.text = "";
+                            CheckSceneEnd();
+                            break;
+                        case 28:
+                            text.text = dialogue[line];
+                            nameText.text = "";
+                            CheckSceneEnd();
                             break;
                         default:
                             text.text = dialogue[line];
@@ -163,5 +184,13 @@ public class SceneHandler : MonoBehaviour
 
         /*button1.SetActive(false);
         button2.SetActive(false);*/
+    }
+
+    void CheckSceneEnd()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("TownMap");
+        }
     }
 }
