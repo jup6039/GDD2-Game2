@@ -23,6 +23,14 @@ public class SceneHandler : MonoBehaviour
     public List<string> dialogue;                       // List of dialogue lines
     private int line;                                   // number of dialogue
 
+    public float buttonWidth1;
+    public float buttonWidth2;
+
+    public float halfWidth1;
+    public float halfWidth2;
+
+    public float buttonX1;
+    public float buttonX2;
 
     // static variables
     static string character = "superman";               // holds the character you are interacting with
@@ -33,6 +41,16 @@ public class SceneHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get button widths
+        buttonWidth1 = button1.GetComponent<RectTransform>().rect.width;
+        buttonWidth2 = button2.GetComponent<RectTransform>().rect.width;
+        halfWidth1 = buttonWidth1 / 2;
+        halfWidth2 = buttonWidth2 / 2;
+
+        // get button x pos
+        //buttonX1 = button1.GetComponent<RectTransform>().rect.x;
+        //buttonX2 = button2.GetComponent<RectTransform>().rect.x;
+
         // get text
         text = dialogueObject.GetComponent<Text>();
         text.text = dialogue[0];
@@ -70,6 +88,11 @@ public class SceneHandler : MonoBehaviour
                             nameText.text = "Superman Jones";
                             CheckClick();
                             break;
+                        case 3:
+                            text.text = dialogue[line];
+                            nameText.text = "Player";
+                            CheckClick();
+                            break;
                         case 4:
                             text.text = dialogue[line];
                             nameText.text = "Superman Jones";
@@ -82,6 +105,8 @@ public class SceneHandler : MonoBehaviour
                             choice1.text = "Point out the plastic bag Superman is failing to hide.";
                             //button2.SetActive(true);
                             choice2.text = "Ask how Naruto is doing.";
+                            Debug.Log(buttonX1);
+                            Debug.Log(buttonX2);
                             CheckChoiceSelect(6, 21);
                             break;
                         case 7:
@@ -91,7 +116,14 @@ public class SceneHandler : MonoBehaviour
                             choice1.text = "Ask why he's obviously lying to you.";
                             //button2.SetActive(true);
                             choice2.text = "He's obviously lying, but maybe you shouldn't push it. Talk about something else.";
+                            Debug.Log(buttonX1);
+                            Debug.Log(buttonX2);
                             CheckChoiceSelect(7, 15);
+                            break;
+                        case 9:
+                            text.text = dialogue[line];
+                            nameText.text = "Player";
+                            CheckClick();
                             break;
                         case 10:
                             text.text = dialogue[line];
@@ -108,9 +140,19 @@ public class SceneHandler : MonoBehaviour
                             nameText.text = "";
                             CheckSceneEnd();
                             break;
+                        case 15:
+                            text.text = dialogue[line];
+                            nameText.text = "Player";
+                            CheckClick();
+                            break;
                         case 16:
                             text.text = dialogue[line];
                             nameText.text = "Superman Jones";
+                            CheckClick();
+                            break;
+                        case 17:
+                            text.text = dialogue[line];
+                            nameText.text = "Player";
                             CheckClick();
                             break;
                         case 18:
@@ -130,6 +172,8 @@ public class SceneHandler : MonoBehaviour
                             choice1.text = "Comment on how good of a brother Superman is.";
                             //button2.SetActive(true);
                             choice2.text = "Ask about Superman's Halloween costume.";
+                            Debug.Log(buttonX1);
+                            Debug.Log(buttonX2);
                             CheckChoiceSelect(23, 26);
                             break;
                         case 24:
@@ -155,7 +199,7 @@ public class SceneHandler : MonoBehaviour
 
     void CheckClick()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             line++;
             Debug.Log(line);
@@ -165,7 +209,8 @@ public class SceneHandler : MonoBehaviour
 
     void CheckChoiceSelect(int _choice1, int _choice2)
     {
-        if (Input.GetMouseButtonDown(0) && Input.mousePosition.x < 0)
+        //if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x > (buttonX1 - halfWidth1) || Input.mousePosition.x < (buttonX1 + halfWidth1)))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             line = _choice1;
 
@@ -173,7 +218,8 @@ public class SceneHandler : MonoBehaviour
             choice2.text = "";
             nameText.text = "Superman Jones";
         }
-        else if (Input.GetMouseButtonDown(0) && Input.mousePosition.x > 0)
+        //else if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x > (buttonX2 - halfWidth2) || Input.mousePosition.x < (buttonX2 + halfWidth2)))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             line = _choice2;
 
@@ -188,7 +234,7 @@ public class SceneHandler : MonoBehaviour
 
     void CheckSceneEnd()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("TownMap");
         }
