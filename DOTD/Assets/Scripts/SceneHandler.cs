@@ -199,7 +199,7 @@ public class SceneHandler : MonoBehaviour
 
     void CheckClick()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
         {
             line++;
             Debug.Log(line);
@@ -210,7 +210,7 @@ public class SceneHandler : MonoBehaviour
     void CheckChoiceSelect(int _choice1, int _choice2)
     {
         //if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x > (buttonX1 - halfWidth1) || Input.mousePosition.x < (buttonX1 + halfWidth1)))
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("X"))
         {
             line = _choice1;
 
@@ -219,7 +219,7 @@ public class SceneHandler : MonoBehaviour
             nameText.text = "Superman Jones";
         }
         //else if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x > (buttonX2 - halfWidth2) || Input.mousePosition.x < (buttonX2 + halfWidth2)))
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetButtonDown("B"))
         {
             line = _choice2;
 
@@ -234,7 +234,7 @@ public class SceneHandler : MonoBehaviour
 
     void CheckSceneEnd()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
         {
             SceneManager.LoadScene("TownMap");
         }
