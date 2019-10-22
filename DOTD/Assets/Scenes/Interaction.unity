@@ -408,8 +408,8 @@ MonoBehaviour:
   buttonWidth2: 0
   halfWidth1: 0
   halfWidth2: 0
-  buttonX1: -161.7
-  buttonX2: 159.6999
+  buttonX1: 0
+  buttonX2: 0
 --- !u!4 &227870895
 Transform:
   m_ObjectHideFlags: 0

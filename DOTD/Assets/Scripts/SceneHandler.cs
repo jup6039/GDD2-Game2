@@ -23,8 +23,8 @@ public class SceneHandler : MonoBehaviour
     public List<string> dialogue;                       // List of dialogue lines
     private int line;                                   // number of dialogue
 
-    public float buttonWidth1;
-    public float buttonWidth2;
+    public Button b1;
+    public Button b2;
 
     public float halfWidth1;
     public float halfWidth2;
@@ -42,14 +42,16 @@ public class SceneHandler : MonoBehaviour
     void Start()
     {
         // get button widths
-        buttonWidth1 = button1.GetComponent<RectTransform>().rect.width;
+        /*buttonWidth1 = button1.GetComponent<RectTransform>().rect.width;
         buttonWidth2 = button2.GetComponent<RectTransform>().rect.width;
         halfWidth1 = buttonWidth1 / 2;
-        halfWidth2 = buttonWidth2 / 2;
+        halfWidth2 = buttonWidth2 / 2;*/
+        b1 = button1.GetComponent<Button>();
+        b2 = button2.GetComponent<Button>();
 
         // get button x pos
-        //buttonX1 = button1.GetComponent<RectTransform>().rect.x;
-        //buttonX2 = button2.GetComponent<RectTransform>().rect.x;
+        buttonX1 = button1.GetComponent<RectTransform>().rect.x;
+        buttonX2 = button2.GetComponent<RectTransform>().rect.x;
 
         // get text
         text = dialogueObject.GetComponent<Text>();
@@ -210,7 +212,7 @@ public class SceneHandler : MonoBehaviour
     void CheckChoiceSelect(int _choice1, int _choice2)
     {
         //if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x > (buttonX1 - halfWidth1) || Input.mousePosition.x < (buttonX1 + halfWidth1)))
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("X"))
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetButtonDown("X"))
         {
             line = _choice1;
 
@@ -226,10 +228,19 @@ public class SceneHandler : MonoBehaviour
             choice1.text = "";
             choice2.text = "";
             nameText.text = "Superman Jones";
-        }
+        }*/
 
+        b1.onClick.AddListener(delegate { JumpToDialogue(_choice1); });
+        b2.onClick.AddListener(delegate { JumpToDialogue(_choice2); });
         /*button1.SetActive(false);
         button2.SetActive(false);*/
+    }
+
+    void JumpToDialogue(int _line)
+    {
+        line = _line;
+        choice1.text = "";
+        choice2.text = "";
     }
 
     void CheckSceneEnd()
