@@ -19,25 +19,25 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += new Vector3(0, speed, 0);
         }
-        else if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             transform.position -= new Vector3(0, speed, 0);
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position -= new Vector3(speed, 0, 0);
         }
-        else if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(speed, 0, 0);
         }
-        else
+        /*else
         {
             // Xbox controller input
             transform.position += new Vector3(
                 Input.GetAxis("Horizontal") / 10,
                 Input.GetAxis("Vertical") / 10,
                 0);
-        }
+        }*/
     }
 }

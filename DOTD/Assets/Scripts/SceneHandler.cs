@@ -118,7 +118,7 @@ public class SceneHandler : MonoBehaviour
                             choice2.text = "He's obviously lying, but maybe you shouldn't push it. Talk about something else.";
                             Debug.Log(buttonX1);
                             Debug.Log(buttonX2);
-                            CheckChoiceSelect(7, 15);
+                            CheckChoiceSelect(8, 15);
                             break;
                         case 9:
                             text.text = dialogue[line];
