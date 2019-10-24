@@ -18,18 +18,28 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(0, speed, 0);
+            if((transform.position.y + gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
+                transform.position -= new Vector3(0, speed, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
             transform.position -= new Vector3(0, speed, 0);
+            if((transform.position.y - gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
+                transform.position += new Vector3(0, speed, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= new Vector3(speed, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            if((transform.position.x - gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
+                transform.position += new Vector3(speed, 0, 0);
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(speed, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            if((transform.position.x + gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
+                transform.position -= new Vector3(speed, 0, 0);
         }
         /*else
         {

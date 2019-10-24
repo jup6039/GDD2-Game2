@@ -10,6 +10,8 @@ public class TownSceneHandler : MonoBehaviour
     private Sprite playerSprite;
     public Sprite maleSprite;
     public Sprite femaleSprite;
+    public RuntimeAnimatorController maleWalk;
+    public RuntimeAnimatorController femaleWalk;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +21,12 @@ public class TownSceneHandler : MonoBehaviour
         if (gender == "male")
         {
             playerObject.GetComponent<SpriteRenderer>().sprite = maleSprite;
+            playerObject.GetComponent<Animator>().runtimeAnimatorController = maleWalk;
         }
         else
         {
             playerObject.GetComponent<SpriteRenderer>().sprite = femaleSprite;
+            playerObject.GetComponent<Animator>().runtimeAnimatorController = femaleWalk;
         }
     }
 

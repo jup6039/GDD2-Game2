@@ -412,8 +412,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 1293819945}
-  maleSprite: {fileID: 21300000, guid: fff9a781a9a48974bb7abd6215ed1b05, type: 3}
-  femaleSprite: {fileID: 21300000, guid: 54d62a9e75d8cf24ca6d04dc27a39f78, type: 3}
+  maleSprite: {fileID: -1942268785955686369, guid: f81f8af527037594ba347433acc219b5,
+    type: 3}
+  femaleSprite: {fileID: -9213700583570335293, guid: 97b8c5e0d3796f448a1d50215c661037,
+    type: 3}
+  maleWalk: {fileID: 9100000, guid: 7c2b5e497a74ca74ba5a7902b1adea67, type: 2}
+  femaleWalk: {fileID: 9100000, guid: 0d250e8a59b5bdc458732b8d5752e14c, type: 2}
 --- !u!4 &655177744
 Transform:
   m_ObjectHideFlags: 0
@@ -521,6 +525,7 @@ GameObject:
   - component: {fileID: 1293819947}
   - component: {fileID: 1293819946}
   - component: {fileID: 1293819949}
+  - component: {fileID: 1293819950}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -578,7 +583,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fff9a781a9a48974bb7abd6215ed1b05, type: 3}
+  m_Sprite: {fileID: -1942268785955686369, guid: f81f8af527037594ba347433acc219b5,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -597,7 +603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293819945}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.31, y: 0.84, z: -0.036017545}
+  m_LocalPosition: {x: -1.31, y: 0.69, z: -0.036017545}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -617,6 +623,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 1886006214}
+--- !u!95 &1293819950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293819945}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c2b5e497a74ca74ba5a7902b1adea67, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1526151621
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,6 +726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1886006216}
   - component: {fileID: 1886006215}
+  - component: {fileID: 1886006217}
   m_Layer: 0
   m_Name: SupermanJones
   m_TagString: Untagged
@@ -745,7 +771,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 36f41d113fbb97c4a93050c19d4acd67, type: 3}
+  m_Sprite: {fileID: -1968488828488175621, guid: 711883812f3450745b522280fb4f5305,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -764,12 +791,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886006214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.94, y: 1.9, z: 0}
+  m_LocalPosition: {x: 2.21, y: 2.21, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1886006217
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886006214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 824dc345c05e30f49a442fd82e8b383b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1973033968
 GameObject:
   m_ObjectHideFlags: 0
