@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneHandler : MonoBehaviour
+public class InteractionHandler : MonoBehaviour
 {
     // Public Variables
 
@@ -34,9 +34,19 @@ public class SceneHandler : MonoBehaviour
 
     // static variables
     static string character = "superman";               // holds the character you are interacting with
-    static Dictionary<string, int> interactionScene;    // holds the scene that character is currently in
+    static Dictionary<string, int> interactionScene = new Dictionary<string, int>();    // holds the scene that character is currently in
 
-    private int scene = 1;
+    private int scene = 1;                              // holds the current scene of the interaction
+
+    // sprite changing variables
+    public GameObject characterObject;
+    public GameObject playerObject;
+    public Sprite playerMale;
+    public Sprite playerFemale;
+    public Sprite superman;
+    public Sprite shelly;
+    public Sprite naruto;
+    public Sprite cinder;
 
     // Start is called before the first frame update
     void Start()
@@ -65,13 +75,63 @@ public class SceneHandler : MonoBehaviour
         choice2 = button2.GetComponentInChildren<Text>();
 
         // set up dictionary
-        /*interactionScene.Add("superman", 1);
+        interactionScene.Add("superman", 1);
         interactionScene.Add("naruto", 1);
         interactionScene.Add("shelly", 1);
-        interactionScene.Add("Cindy", 1);*/
+        interactionScene.Add("Cindy", 1);
+
+        // initialize scene
+        scene = interactionScene[character];
 
         // initialize line var
-        line = 0;
+        switch (scene)
+        {
+            case 0:
+                line = 30;
+                break;
+            case 1:
+                line = 0;
+                break;
+            case 2:
+                line = 32;
+                break;
+            case 3:
+                line = 34;
+                break;
+            case 4:
+                line = 36;
+                break;
+            case 5:
+                line = 38;
+                break;
+        }
+
+        // initialize player sprite
+        if (TownSceneHandler.gender == "male")
+        {
+            playerObject.GetComponent<SpriteRenderer>().sprite = playerMale;
+        }
+        else
+        {
+            playerObject.GetComponent<SpriteRenderer>().sprite = playerFemale;
+        }
+
+        // initialize other character sprite
+        switch (character)
+        {
+            case "superman":
+                characterObject.GetComponent<SpriteRenderer>().sprite = superman;
+                break;
+            case "shelly":
+                characterObject.GetComponent<SpriteRenderer>().sprite = shelly;
+                break;
+            case "naruto":
+                characterObject.GetComponent<SpriteRenderer>().sprite = naruto;
+                break;
+            case "cinder":
+                characterObject.GetComponent<SpriteRenderer>().sprite = cinder;
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -140,7 +200,7 @@ public class SceneHandler : MonoBehaviour
                         case 13:
                             text.text = dialogue[line];
                             nameText.text = "";
-                            CheckSceneEnd();
+                            CheckSceneEnd(2);
                             break;
                         case 15:
                             text.text = dialogue[line];
@@ -165,7 +225,7 @@ public class SceneHandler : MonoBehaviour
                         case 19:
                             text.text = dialogue[line];
                             nameText.text = "";
-                            CheckSceneEnd();
+                            CheckSceneEnd(2);
                             break;
                         case 22:
                             nameText.text = "";
@@ -181,12 +241,12 @@ public class SceneHandler : MonoBehaviour
                         case 24:
                             text.text = dialogue[line];
                             nameText.text = "";
-                            CheckSceneEnd();
+                            CheckSceneEnd(2);
                             break;
                         case 28:
                             text.text = dialogue[line];
                             nameText.text = "";
-                            CheckSceneEnd();
+                            CheckSceneEnd(2);
                             break;
                         default:
                             text.text = dialogue[line];
@@ -243,8 +303,9 @@ public class SceneHandler : MonoBehaviour
         choice2.text = "";
     }
 
-    void CheckSceneEnd()
+    void CheckSceneEnd(int _nextScene)
     {
+        interactionScene[character] = _nextScene;
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
         {
             SceneManager.LoadScene("TownMap");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InteractionCheck : MonoBehaviour {
+public class CheckInteraction : MonoBehaviour {
 
     // Fields
     // List of GameObjects to store other character to check for interaction with
