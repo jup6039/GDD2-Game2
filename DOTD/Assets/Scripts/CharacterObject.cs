@@ -8,15 +8,25 @@ public class CharacterObject : MonoBehaviour
     public GameObject player;
     public float interactionRadius;
     private SpriteRenderer renderer;
-    
+    [SerializeField]
+    private List<Collider2D> colliders;
+    [SerializeField]
+    private GameObject collide;
 
     // Start is called before the first frame update
     void Start()
     {
         interactionRadius = 2;
         renderer = gameObject.GetComponent<SpriteRenderer>();
+        foreach (Collider2D c in collide.GetComponents<Collider2D>()) {
+            colliders.Add(c);
+         //   Debug.Log(colliders.Count);
+        }
     }
+   void OnCollisionEnter2D(Collision2D col)
+    {
 
+    }
     // Update is called once per frame
     void Update()
     {
