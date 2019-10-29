@@ -162,6 +162,8 @@ public class InteractionHandler : MonoBehaviour
                             break;
                         case 5:
                             nameText.text = "";
+                            b1.gameObject.SetActive(true);
+                            b2.gameObject.SetActive(true);
                             //button1.SetActive(true);
                             text.text = " ";
                             choice1.text = "Point out the plastic bag Superman is failing to hide.";
@@ -173,6 +175,8 @@ public class InteractionHandler : MonoBehaviour
                             break;
                         case 7:
                             nameText.text = "";
+                            b1.gameObject.SetActive(true);
+                            b2.gameObject.SetActive(true);
                             //button1.SetActive(true);
                             text.text = " ";
                             choice1.text = "Ask why he's obviously lying to you.";
@@ -229,10 +233,11 @@ public class InteractionHandler : MonoBehaviour
                             break;
                         case 22:
                             nameText.text = "";
-                            //button1.SetActive(true);
+                            b1.gameObject.SetActive(true);
+                            b2.gameObject.SetActive(true);
                             text.text = " ";
                             choice1.text = "Comment on how good of a brother Superman is.";
-                            //button2.SetActive(true);
+                            //b2.SetActive(true);
                             choice2.text = "Ask about Superman's Halloween costume.";
                             Debug.Log(buttonX1);
                             Debug.Log(buttonX2);
@@ -292,8 +297,6 @@ public class InteractionHandler : MonoBehaviour
 
         b1.onClick.AddListener(delegate { JumpToDialogue(_choice1); });
         b2.onClick.AddListener(delegate { JumpToDialogue(_choice2); });
-        /*button1.SetActive(false);
-        button2.SetActive(false);*/
     }
 
     void JumpToDialogue(int _line)
@@ -301,6 +304,8 @@ public class InteractionHandler : MonoBehaviour
         line = _line;
         choice1.text = "";
         choice2.text = "";
+        b1.gameObject.SetActive(false);
+        b2.gameObject.SetActive(false);
     }
 
     void CheckSceneEnd(int _nextScene)
