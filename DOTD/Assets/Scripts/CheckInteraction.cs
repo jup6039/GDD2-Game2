@@ -14,22 +14,36 @@ public class CheckInteraction : MonoBehaviour {
     public GameObject shelly;
 
 	// Use this for initialization
-	//void Start () {
-        /*switch (InteractionHandler.character)
+	void Start () {
+        //Hide characters on the map if they've already been interacted with in that day
+        switch (InteractionHandler.character)
         {
             case "":
                 break;
             case "superman":
-                superman.SetActive() = false;
+                superman.SetActive(false);
                 break;
             case "cindy":
+                cindy.SetActive(false);
                 break;
             case "shelly":
+                shelly.SetActive(false);
                 break;
             case "naruto":
+                naruto.SetActive(false);
                 break;
-        }*/
-	//}
+        }
+
+        //Show all characters on the map at the start of a new day
+        if (TownSceneHandler.interactionsLeft == TownSceneHandler.interactionsPerDay)
+        {
+            foreach(GameObject c in characters)
+            {
+                c.SetActive(true);
+            }
+        }
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
