@@ -474,6 +474,9 @@ MonoBehaviour:
   - SCENE 0
   - SCENE 0
   - SCENE 0
+  dialogueShelly: []
+  dialogueNaruto: []
+  dialogueCindy: []
   b1: {fileID: 0}
   b2: {fileID: 0}
   halfWidth1: 0
@@ -482,12 +485,13 @@ MonoBehaviour:
   buttonX2: 0
   characterObject: {fileID: 1545396248}
   playerObject: {fileID: 726233093}
-  playerMale: {fileID: 21300000, guid: fff9a781a9a48974bb7abd6215ed1b05, type: 3}
+  playerMale: {fileID: -5048207724562370689, guid: fff9a781a9a48974bb7abd6215ed1b05,
+    type: 3}
   playerFemale: {fileID: 21300000, guid: 54d62a9e75d8cf24ca6d04dc27a39f78, type: 3}
   superman: {fileID: 21300000, guid: 96bc37f36bd7fbe4ea97ed49cc195ebd, type: 3}
   shelly: {fileID: 0}
   naruto: {fileID: 0}
-  cinder: {fileID: 0}
+  cindy: {fileID: 0}
 --- !u!4 &227870895
 Transform:
   m_ObjectHideFlags: 0
@@ -925,7 +929,7 @@ SpriteRenderer:
   m_Size: {x: 3.3, y: 5.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &726233095
