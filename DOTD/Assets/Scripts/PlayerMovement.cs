@@ -15,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        //commented out
+        //rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        /* Niko's stuff, commented out
         Debug.Log(shouldMove);
         if (shouldMove)
         {
@@ -37,47 +39,54 @@ public class PlayerMovement : MonoBehaviour
                 transform.Translate(0, playerSpeed * Time.deltaTime, 0);
             }
         }
+        */
 
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    transform.position += new Vector3(0, speed, 0);
-        //    if((transform.position.y + gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
-        //        transform.position -= new Vector3(0, speed, 0);
-        //        rb.AddForce(transform.up *1.0f);
-        //}
-        //if (Input.GetKey(KeyCode.S))
-        //{
-        //    transform.position -= new Vector3(0, speed, 0);
-        //    if((transform.position.y - gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
-        //        transform.position += new Vector3(0, speed, 0);
-        //    rb.AddForce(-transform.up * 1.0f);
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += new Vector3(0, speed, 0);
+            if((transform.position.y + gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
+                transform.position -= new Vector3(0, speed, 0);
+            //commented out
+                //rb.AddForce(transform.up *1.0f);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= new Vector3(0, speed, 0);
+            if((transform.position.y - gameObject.GetComponent<SpriteRenderer>().bounds.extents.y) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.y)
+                transform.position += new Vector3(0, speed, 0);
+            //commented out
+            //rb.AddForce(-transform.up * 1.0f);
 
-        //}
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    transform.position -= new Vector3(speed, 0, 0);
-        //    gameObject.GetComponent<SpriteRenderer>().flipX = false;
-        //    if((transform.position.x - gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
-        //        transform.position += new Vector3(speed, 0, 0);
-        //    rb.AddForce(-transform.right * 1.0f);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position -= new Vector3(speed, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            if((transform.position.x - gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) <= -GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
+                transform.position += new Vector3(speed, 0, 0);
+            //commented out
+            //rb.AddForce(-transform.right * 1.0f);
 
-        //}
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    transform.position += new Vector3(speed, 0, 0);
-        //    gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        //    if((transform.position.x + gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
-        //        transform.position -= new Vector3(speed, 0, 0);
-        //    rb.AddForce(transform.right * 1.0f);
-        //}
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += new Vector3(speed, 0, 0);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            if((transform.position.x + gameObject.GetComponent<SpriteRenderer>().bounds.extents.x) >= GameObject.Find("Cover").GetComponent<SpriteRenderer>().bounds.extents.x)
+                transform.position -= new Vector3(speed, 0, 0);
+            //commented out
+            //rb.AddForce(transform.right * 1.0f);
+        }
 
+        // Niko's stuff, commented out
         //if (Input.anyKey == false)
         //{
-        //    rb.AddForce(transform.right * 0f);
+        //   rb.AddForce(transform.right * 0f);
         //}
 
     }
 
+    /* Niko's stuff, commented out
     void MoveForward()
     {
 
@@ -145,4 +154,6 @@ public class PlayerMovement : MonoBehaviour
     //{
     //    shouldMove = true;
     //}
+
+    */
 }

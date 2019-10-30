@@ -33,7 +33,7 @@ public class InteractionHandler : MonoBehaviour
     public float buttonX2;
 
     // static variables
-    static string character = "superman";               // holds the character you are interacting with
+    public static string character = "";               // holds the character you are interacting with
     static Dictionary<string, int> interactionScene = new Dictionary<string, int>();    // holds the scene that character is currently in
 
     private int scene = 1;                              // holds the current scene of the interaction
@@ -46,7 +46,7 @@ public class InteractionHandler : MonoBehaviour
     public Sprite superman;
     public Sprite shelly;
     public Sprite naruto;
-    public Sprite cinder;
+    public Sprite cindy;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +78,7 @@ public class InteractionHandler : MonoBehaviour
         interactionScene.Add("superman", 1);
         interactionScene.Add("naruto", 1);
         interactionScene.Add("shelly", 1);
-        interactionScene.Add("Cindy", 1);
+        interactionScene.Add("cindy", 1);
 
         // initialize scene
         scene = interactionScene[character];
@@ -128,8 +128,8 @@ public class InteractionHandler : MonoBehaviour
             case "naruto":
                 characterObject.GetComponent<SpriteRenderer>().sprite = naruto;
                 break;
-            case "cinder":
-                characterObject.GetComponent<SpriteRenderer>().sprite = cinder;
+            case "cindy":
+                characterObject.GetComponent<SpriteRenderer>().sprite = cindy;
                 break;
         }
     }
@@ -138,130 +138,230 @@ public class InteractionHandler : MonoBehaviour
     void Update()
     {
         //interactionScene.TryGetValue(character, out scene);
+
+        //-----------SUPERMAN ROUTES------------
         if (character == "superman")
         {
-            switch (scene)
+            if (TownSceneHandler.day == 1)
             {
-                case 1:
-                    switch (line)
-                    {
-                        case 2:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 3:
-                            text.text = dialogue[line];
-                            nameText.text = "Player";
-                            CheckClick();
-                            break;
-                        case 4:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 5:
-                            nameText.text = "";
-                            b1.gameObject.SetActive(true);
-                            b2.gameObject.SetActive(true);
-                            //button1.SetActive(true);
-                            text.text = " ";
-                            choice1.text = "Point out the plastic bag Superman is failing to hide.";
-                            //button2.SetActive(true);
-                            choice2.text = "Ask how Naruto is doing.";
-                            Debug.Log(buttonX1);
-                            Debug.Log(buttonX2);
-                            CheckChoiceSelect(6, 21);
-                            break;
-                        case 7:
-                            nameText.text = "";
-                            b1.gameObject.SetActive(true);
-                            b2.gameObject.SetActive(true);
-                            //button1.SetActive(true);
-                            text.text = " ";
-                            choice1.text = "Ask why he's obviously lying to you.";
-                            //button2.SetActive(true);
-                            choice2.text = "He's obviously lying, but maybe you shouldn't push it. Talk about something else.";
-                            Debug.Log(buttonX1);
-                            Debug.Log(buttonX2);
-                            CheckChoiceSelect(8, 15);
-                            break;
-                        case 9:
-                            text.text = dialogue[line];
-                            nameText.text = "Player";
-                            CheckClick();
-                            break;
-                        case 10:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 12:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 13:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckSceneEnd(2);
-                            break;
-                        case 15:
-                            text.text = dialogue[line];
-                            nameText.text = "Player";
-                            CheckClick();
-                            break;
-                        case 16:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 17:
-                            text.text = dialogue[line];
-                            nameText.text = "Player";
-                            CheckClick();
-                            break;
-                        case 18:
-                            text.text = dialogue[line];
-                            nameText.text = "Superman Jones";
-                            CheckClick();
-                            break;
-                        case 19:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckSceneEnd(2);
-                            break;
-                        case 22:
-                            nameText.text = "";
-                            b1.gameObject.SetActive(true);
-                            b2.gameObject.SetActive(true);
-                            text.text = " ";
-                            choice1.text = "Comment on how good of a brother Superman is.";
-                            //b2.SetActive(true);
-                            choice2.text = "Ask about Superman's Halloween costume.";
-                            Debug.Log(buttonX1);
-                            Debug.Log(buttonX2);
-                            CheckChoiceSelect(23, 26);
-                            break;
-                        case 24:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckSceneEnd(2);
-                            break;
-                        case 28:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckSceneEnd(2);
-                            break;
-                        default:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckClick();
-                            break;
-                    }
-                    break;
+                switch (scene)
+                {
+                    case 1:
+                        switch (line)
+                        {
+                            case 2:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 3:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 4:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 5:
+                                nameText.text = "";
+                                b1.gameObject.SetActive(true);
+                                b2.gameObject.SetActive(true);
+                                //button1.SetActive(true);
+                                text.text = " ";
+                                choice1.text = "Point out the plastic bag Superman is failing to hide.";
+                                //button2.SetActive(true);
+                                choice2.text = "Ask how Naruto is doing.";
+                                Debug.Log(buttonX1);
+                                Debug.Log(buttonX2);
+                                CheckChoiceSelect(6, 21);
+                                break;
+                            case 7:
+                                nameText.text = "";
+                                b1.gameObject.SetActive(true);
+                                b2.gameObject.SetActive(true);
+                                //button1.SetActive(true);
+                                text.text = " ";
+                                choice1.text = "Ask why he's obviously lying to you.";
+                                //button2.SetActive(true);
+                                choice2.text = "He's obviously lying, but maybe you shouldn't push it. Talk about something else.";
+                                Debug.Log(buttonX1);
+                                Debug.Log(buttonX2);
+                                CheckChoiceSelect(8, 15);
+                                break;
+                            case 9:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 10:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 12:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 13:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckSceneEnd(2);
+                                break;
+                            case 15:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 16:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 17:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 18:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 19:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckSceneEnd(2);
+                                break;
+                            case 22:
+                                nameText.text = "";
+                                b1.gameObject.SetActive(true);
+                                b2.gameObject.SetActive(true);
+                                text.text = " ";
+                                choice1.text = "Comment on how good of a brother Superman is.";
+                                //b2.SetActive(true);
+                                choice2.text = "Ask about Superman's Halloween costume.";
+                                Debug.Log(buttonX1);
+                                Debug.Log(buttonX2);
+                                CheckChoiceSelect(23, 26);
+                                break;
+                            case 24:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckSceneEnd(2);
+                                break;
+                            case 28:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckSceneEnd(2);
+                                break;
+                            default:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckClick();
+                                break;
+                        }
+                        break;
+                }
+            }
+            else if (TownSceneHandler.day == 2)
+            {
+
+            }
+            else if (TownSceneHandler.day == 3)
+            {
+
+            }
+            else if (TownSceneHandler.day == 4)
+            {
+
+            }
+            else if (TownSceneHandler.day == 5)
+            {
+
             }
         }
+
+        //----------------CINDY ROUTES--------------------
+
+        if (character == "cindy")
+        {
+            if (TownSceneHandler.day == 1)
+            {
+                CheckSceneEnd(2);
+            }
+            else if (TownSceneHandler.day == 2)
+            {
+
+            }
+            else if (TownSceneHandler.day == 3)
+            {
+
+            }
+            else if (TownSceneHandler.day == 4)
+            {
+
+            }
+            else if (TownSceneHandler.day == 5)
+            {
+
+            }
+        }
+
+        //-----------------NARUTO ROUTES-------------------
+
+        if (character == "naruto")
+        {
+            if (TownSceneHandler.day == 1)
+            {
+                CheckSceneEnd(2);
+            }
+            else if (TownSceneHandler.day == 2)
+            {
+
+            }
+            else if (TownSceneHandler.day == 3)
+            {
+
+            }
+            else if (TownSceneHandler.day == 4)
+            {
+
+            }
+            else if (TownSceneHandler.day == 5)
+            {
+
+            }
+        }
+
+        //-------------------SHELLY ROUTES------------------
+
+        if (character == "shelly")
+        {
+            if (TownSceneHandler.day == 1)
+            {
+                CheckSceneEnd(2);
+            }
+            else if (TownSceneHandler.day == 2)
+            {
+
+            }
+            else if (TownSceneHandler.day == 3)
+            {
+
+            }
+            else if (TownSceneHandler.day == 4)
+            {
+
+            }
+            else if (TownSceneHandler.day == 5)
+            {
+
+            }
+        }
+
     }
 
     void CheckClick()
@@ -313,6 +413,20 @@ public class InteractionHandler : MonoBehaviour
         interactionScene[character] = _nextScene;
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
         {
+            //Remove 1 from player's remaining interactions
+            TownSceneHandler.interactionsLeft = TownSceneHandler.interactionsLeft - 1;
+
+            //If player's remaining interactions are 0, go to the next day and reset their amount of interactions
+            if(TownSceneHandler.interactionsLeft == 0)
+            {
+                TownSceneHandler.day = TownSceneHandler.day + 1;
+                TownSceneHandler.interactionsLeft = TownSceneHandler.interactionsLeft + 2;
+
+                //Set character to an empty string so you can interact with the same person you last interacted with on a previous day
+                character = "";
+            }
+
+            //Load TownMap
             SceneManager.LoadScene("TownMap");
         }
     }

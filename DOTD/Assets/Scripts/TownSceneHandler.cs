@@ -5,6 +5,8 @@ using UnityEngine;
 public class TownSceneHandler : MonoBehaviour
 {
     public static string gender = "female";
+    public static int day = 1;
+    public static int interactionsLeft = 2;
 
     public GameObject playerObject;
     private Sprite playerSprite;

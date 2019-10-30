@@ -22,10 +22,58 @@ public class CheckInteraction : MonoBehaviour {
 			{
 				if(CheckCollision(gameObject, c))
 				{
-				if(c.name == "SupermanJones")
-				{
-					SceneManager.LoadScene("Interaction");
-				}
+				    if(c.name == "SupermanJones")
+				    {
+                        //If the last recorded character in the interaction scene isn't superman, proceed. Otherwise, nothing will happen
+                        // so the player can't interact with him twice in one day
+                        if(InteractionHandler.character != "superman")
+                        {
+                            //Set the character in InteractionHandler to be superman
+                            InteractionHandler.character = "superman";
+
+                            //Load Scene
+					        SceneManager.LoadScene("Interaction");
+                        }
+				    }
+                    else if (c.name == "CindyUmbrella")
+                    {
+                        //If the last recorded character in the interaction scene isn't cindy, proceed. Otherwise, nothing will happen
+                        // so the player can't interact with her twice in one day
+                        if(InteractionHandler.character != "cindy")
+                        {
+                            //Set the character in InteractionHandler to be cindy
+                            InteractionHandler.character = "cindy";
+
+                            //Load Scene
+					        SceneManager.LoadScene("Interaction");
+                        }
+                    }
+                    else if (c.name == "NarutoJones")
+                    {
+                        //If the last recorded character in the interaction scene isn't naruto, proceed. Otherwise, nothing will happen
+                        // so the player can't interact with him twice in one day
+                        if(InteractionHandler.character != "naruto")
+                        {
+                            //Set the character in InteractionHandler to be naruto
+                            InteractionHandler.character = "naruto";
+
+                            //Load Scene
+					        SceneManager.LoadScene("Interaction");
+                        }
+                    }
+                    else if (c.name == "ShellyTonne")
+                    {
+                        //If the last recorded character in the interaction scene isn't shelly, proceed. Otherwise, nothing will happen
+                        // so the player can't interact with her twice in one day
+                        if(InteractionHandler.character != "shelly")
+                        {
+                            //Set the character in InteractionHandler to be shelly
+                            InteractionHandler.character = "shelly";
+
+                            //Load Scene
+					        SceneManager.LoadScene("Interaction");
+                        }
+                    }
 				}
 			}
 		}
