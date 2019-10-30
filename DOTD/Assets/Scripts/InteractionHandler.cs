@@ -20,7 +20,10 @@ public class InteractionHandler : MonoBehaviour
     public GameObject nameObject;                       // holds the name object, to edit the text
     private Text nameText;                              // holds the text object in the nameObject var
 
-    public List<string> dialogue;                       // List of dialogue lines
+    public List<string> dialogue;                       // List of dialogue lines (this one is superman)
+    public List<string> dialogueShelly;
+    public List<string> dialogueNaruto;
+    public List<string> dialogueCindy;
     private int line;                                   // number of dialogue
 
     public Button b1;
@@ -35,6 +38,7 @@ public class InteractionHandler : MonoBehaviour
     // static variables
     public static string character = "";               // holds the character you are interacting with
     static Dictionary<string, int> interactionScene = new Dictionary<string, int>();    // holds the scene that character is currently in
+    static bool dicInit = false;
 
     private int scene = 1;                              // holds the current scene of the interaction
 
@@ -63,6 +67,17 @@ public class InteractionHandler : MonoBehaviour
         buttonX1 = button1.GetComponent<RectTransform>().rect.x;
         buttonX2 = button2.GetComponent<RectTransform>().rect.x;
 
+        // set up dictionary
+        if (!dicInit)
+        {
+            interactionScene.Add("superman", 1);
+            interactionScene.Add("naruto", 1);
+            interactionScene.Add("shelly", 1);
+            interactionScene.Add("cindy", 1);
+
+            dicInit = true;
+        }
+
         // get text
         text = dialogueObject.GetComponent<Text>();
         text.text = dialogue[0];
@@ -74,37 +89,10 @@ public class InteractionHandler : MonoBehaviour
         choice1 = button1.GetComponentInChildren<Text>();
         choice2 = button2.GetComponentInChildren<Text>();
 
-        // set up dictionary
-        interactionScene.Add("superman", 1);
-        interactionScene.Add("naruto", 1);
-        interactionScene.Add("shelly", 1);
-        interactionScene.Add("cindy", 1);
-
         // initialize scene
         scene = interactionScene[character];
 
-        // initialize line var
-        switch (scene)
-        {
-            case 0:
-                line = 30;
-                break;
-            case 1:
-                line = 0;
-                break;
-            case 2:
-                line = 32;
-                break;
-            case 3:
-                line = 34;
-                break;
-            case 4:
-                line = 36;
-                break;
-            case 5:
-                line = 38;
-                break;
-        }
+        
 
         // initialize player sprite
         if (TownSceneHandler.gender == "male")
@@ -121,6 +109,28 @@ public class InteractionHandler : MonoBehaviour
         {
             case "superman":
                 characterObject.GetComponent<SpriteRenderer>().sprite = superman;
+                // initialize line var
+                switch (scene)
+                {
+                    case 0:
+                        line = 30;
+                        break;
+                    case 1:
+                        line = 0;
+                        break;
+                    case 2:
+                        line = 32;
+                        break;
+                    case 3:
+                        line = 34;
+                        break;
+                    case 4:
+                        line = 36;
+                        break;
+                    case 5:
+                        line = 38;
+                        break;
+                }
                 break;
             case "shelly":
                 characterObject.GetComponent<SpriteRenderer>().sprite = shelly;
@@ -413,6 +423,9 @@ public class InteractionHandler : MonoBehaviour
         interactionScene[character] = _nextScene;
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("A"))
         {
+
+            interactionScene[character] += 1;
+
             //Remove 1 from player's remaining interactions
             TownSceneHandler.interactionsLeft = TownSceneHandler.interactionsLeft - 1;
 
@@ -420,7 +433,7 @@ public class InteractionHandler : MonoBehaviour
             if(TownSceneHandler.interactionsLeft == 0)
             {
                 TownSceneHandler.day = TownSceneHandler.day + 1;
-                TownSceneHandler.interactionsLeft = TownSceneHandler.interactionsLeft + 2;
+                TownSceneHandler.interactionsLeft = TownSceneHandler.interactionsPerDay;
 
                 //Set character to an empty string so you can interact with the same person you last interacted with on a previous day
                 character = "";

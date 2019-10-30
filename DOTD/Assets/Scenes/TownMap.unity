@@ -1214,6 +1214,10 @@ MonoBehaviour:
   - {fileID: 966923430}
   - {fileID: 309085351}
   - {fileID: 1123362984}
+  superman: {fileID: 1886006214}
+  naruto: {fileID: 309085351}
+  cindy: {fileID: 966923430}
+  shelly: {fileID: 1123362984}
 --- !u!95 &1293819950
 Animator:
   serializedVersion: 3

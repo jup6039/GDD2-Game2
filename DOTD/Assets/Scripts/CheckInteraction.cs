@@ -8,11 +8,28 @@ public class CheckInteraction : MonoBehaviour {
     // Fields
     // List of GameObjects to store other character to check for interaction with
     public List<GameObject> characters;
+    public GameObject superman;
+    public GameObject naruto;
+    public GameObject cindy;
+    public GameObject shelly;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	//void Start () {
+        /*switch (InteractionHandler.character)
+        {
+            case "":
+                break;
+            case "superman":
+                superman.SetActive() = false;
+                break;
+            case "cindy":
+                break;
+            case "shelly":
+                break;
+            case "naruto":
+                break;
+        }*/
+	//}
 	
 	// Update is called once per frame
 	void Update () {
