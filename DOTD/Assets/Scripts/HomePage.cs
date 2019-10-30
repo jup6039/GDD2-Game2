@@ -22,8 +22,6 @@ public class HomePage : MonoBehaviour
         maleButton.onClick.AddListener(delegate { ChangeGender("male"); });
         femaleButton.onClick.AddListener(delegate { ChangeGender("female"); });
         startButton.onClick.AddListener(ChangeScene);
-
-        Debug.Log(TownSceneHandler.gender);
     }
 
     void ChangeGender(string _gender)
@@ -33,6 +31,6 @@ public class HomePage : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("TownMap");
+        SceneManager.LoadScene("DaySwapScene");
     }
 }

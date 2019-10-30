@@ -437,10 +437,15 @@ public class InteractionHandler : MonoBehaviour
 
                 //Set character to an empty string so you can interact with the same person you last interacted with on a previous day
                 character = "";
-            }
 
+                //Swap Day
+                SceneManager.LoadScene("DaySwapScene");
+            }
+            else
+            {    
             //Load TownMap
             SceneManager.LoadScene("TownMap");
+            }
         }
     }
 }
