@@ -11,24 +11,24 @@ public class CheckInteraction : MonoBehaviour {
     public GameObject superman;
     public GameObject naruto;
     public GameObject cindy;
-    public GameObject shelly;
+    //public GameObject shelly;
 
 	// Use this for initialization
 	void Start () {
         //Hide characters on the map if they've already been interacted with in that day
         switch (InteractionHandler.character)
         {
-            case "":
-                break;
+            //case "":
+                //break;
             case "superman":
                 superman.SetActive(false);
                 break;
             case "cindy":
                 cindy.SetActive(false);
                 break;
-            case "shelly":
-                shelly.SetActive(false);
-                break;
+            //case "shelly":
+                //shelly.SetActive(false);
+                //break;
             case "naruto":
                 naruto.SetActive(false);
                 break;
@@ -92,19 +92,19 @@ public class CheckInteraction : MonoBehaviour {
 					        SceneManager.LoadScene("Interaction");
                         }
                     }
-                    else if (c.name == "ShellyTonne")
-                    {
-                        //If the last recorded character in the interaction scene isn't shelly, proceed. Otherwise, nothing will happen
-                        // so the player can't interact with her twice in one day
-                        if(InteractionHandler.character != "shelly")
-                        {
-                            //Set the character in InteractionHandler to be shelly
-                            InteractionHandler.character = "shelly";
+             //       else if (c.name == "ShellyTonne")
+             //       {
+             //           //If the last recorded character in the interaction scene isn't shelly, proceed. Otherwise, nothing will happen
+             //           // so the player can't interact with her twice in one day
+             //           if(InteractionHandler.character != "shelly")
+             //           {
+             //               //Set the character in InteractionHandler to be shelly
+             //               InteractionHandler.character = "shelly";
 
-                            //Load Scene
-					        SceneManager.LoadScene("Interaction");
-                        }
-                    }
+             //               //Load Scene
+					        //SceneManager.LoadScene("Interaction");
+             //           }
+             //       }
 				}
 			}
 		}

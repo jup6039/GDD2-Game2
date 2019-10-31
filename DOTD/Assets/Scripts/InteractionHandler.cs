@@ -74,9 +74,9 @@ public class InteractionHandler : MonoBehaviour
         b1 = button1.GetComponent<Button>();
         b2 = button2.GetComponent<Button>();
 
-        tb1 = threebutton1.GetComponent<Button>();
-        tb2 = threebutton2.GetComponent<Button>();
-        tb3 = threebutton3.GetComponent<Button>();
+        //tb1 = threebutton1.GetComponent<Button>();
+        //tb2 = threebutton2.GetComponent<Button>();
+        //tb3 = threebutton3.GetComponent<Button>();
 
         // get button x pos
         buttonX1 = button1.GetComponent<RectTransform>().rect.x;
@@ -87,17 +87,17 @@ public class InteractionHandler : MonoBehaviour
         {
             interactionScene.Add("superman", 0);
             interactionScene.Add("naruto", 0);
-            interactionScene.Add("shelly", 0);
+            //interactionScene.Add("shelly", 0);
             interactionScene.Add("cindy", 0);
 
             dicInit = true;
         }
         if (!friendDicInit2)
         {
-            interactionScene.Add("superman", 0);
-            interactionScene.Add("naruto", 0);
-            interactionScene.Add("shelly", 0);
-            interactionScene.Add("cindy", 0);
+            //interactionScene.Add("superman", 0);
+            //interactionScene.Add("naruto", 0);
+            //interactionScene.Add("shelly", 0);
+            //interactionScene.Add("cindy", 0);
 
             friendDicInit2 = true;
         }
@@ -337,11 +337,11 @@ public class InteractionHandler : MonoBehaviour
                                 nameText.text = "";
                                 CheckSceneEnd(2);
                                 break;
-                            default:
-                                text.text = dialogue[line];
-                                nameText.text = "";
-                                CheckClick();
-                                break;
+                            //default:
+                            //    text.text = dialogue[line];
+                            //    nameText.text = "";
+                            //    CheckClick();
+                            //    break;
                         }
                         break;
 
@@ -583,11 +583,11 @@ public class InteractionHandler : MonoBehaviour
                             nameText.text = "";
                             CheckSceneEnd(2);
                             break;
-                        default:
-                            text.text = dialogue[line];
-                            nameText.text = "";
-                            CheckClick();
-                            break;
+                        //default:
+                        //    text.text = dialogue[line];
+                        //    nameText.text = "";
+                        //    CheckClick();
+                        //    break;
                     }
                     break;
                 case 2:

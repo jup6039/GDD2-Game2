@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: ebe0d1add9513864daedeb4f693fe92d
+  - enabled: 1
+    path: Assets/Scenes/DaySwapScene.unity
+    guid: 203602f64d6f9a949a933e60fe2db2bf
+  - enabled: 1
     path: Assets/Scenes/TownMap.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Interaction.unity
     guid: 6733c5f814a122a4c9b680f59aecfe85
-  - enabled: 1
-    path: Assets/Scenes/DaySwapScene.unity
-    guid: 203602f64d6f9a949a933e60fe2db2bf
-  - enabled: 1
-    path: Assets/Scenes/OpeningScene.unity
-    guid: ebe0d1add9513864daedeb4f693fe92d
   m_configObjects: {}

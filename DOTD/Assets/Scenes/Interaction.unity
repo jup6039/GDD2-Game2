@@ -346,6 +346,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button1: {fileID: 1713373286}
   button2: {fileID: 19139129}
+  threebutton1: {fileID: 0}
+  threebutton2: {fileID: 0}
+  threebutton3: {fileID: 0}
   dialogueObject: {fileID: 1889689504}
   nameObject: {fileID: 564035745}
   dialogue:
@@ -1007,19 +1010,21 @@ MonoBehaviour:
   - You failed to go trick or treating with Cindy.
   b1: {fileID: 0}
   b2: {fileID: 0}
+  tb1: {fileID: 0}
+  tb2: {fileID: 0}
+  tb3: {fileID: 0}
   halfWidth1: 0
   halfWidth2: 0
   buttonX1: 0
   buttonX2: 0
   characterObject: {fileID: 1545396248}
   playerObject: {fileID: 726233093}
-  playerMale: {fileID: -5048207724562370689, guid: fff9a781a9a48974bb7abd6215ed1b05,
-    type: 3}
-  playerFemale: {fileID: 21300000, guid: 54d62a9e75d8cf24ca6d04dc27a39f78, type: 3}
-  superman: {fileID: 21300000, guid: 96bc37f36bd7fbe4ea97ed49cc195ebd, type: 3}
+  playerMale: {fileID: 21300000, guid: 4d7a475c3447c904c83d9819d1ac297f, type: 3}
+  playerFemale: {fileID: 21300000, guid: f4a40e0ff304588459b63071a3cb7b06, type: 3}
+  superman: {fileID: 21300000, guid: c5669a5ea898e3c4b965ff327cc48cfb, type: 3}
   shelly: {fileID: 0}
-  naruto: {fileID: 0}
-  cindy: {fileID: 0}
+  naruto: {fileID: 21300000, guid: 07a39334cbaad724eb6967d149ba2250, type: 3}
+  cindy: {fileID: 21300000, guid: 854289506ea0a37458b730d41ff7e313, type: 3}
 --- !u!4 &227870895
 Transform:
   m_ObjectHideFlags: 0
@@ -1373,7 +1378,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28b4b4a7dbdea2c4d958110efbf9b0d1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 029e8912b4d4da54d847492b04125aed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1446,7 +1451,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fff9a781a9a48974bb7abd6215ed1b05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d7a475c3447c904c83d9819d1ac297f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1669,7 +1674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 96bc37f36bd7fbe4ea97ed49cc195ebd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5669a5ea898e3c4b965ff327cc48cfb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1688,8 +1693,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545396248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.83, z: -83.55205}
-  m_LocalScale: {x: 3.188, y: 3.188, z: 3.188}
+  m_LocalPosition: {x: 6.84, y: -1.65, z: -83.55205}
+  m_LocalScale: {x: 1, y: 1, z: 3.188}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
