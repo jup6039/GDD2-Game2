@@ -50,12 +50,11 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 10
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
@@ -63,6 +62,7 @@ LightmapSettings:
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -77,10 +77,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 512
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 512
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 2
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -88,7 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -117,7 +124,8 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 19139130}
@@ -135,7 +143,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19139129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -154,11 +163,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19139129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -172,34 +182,36 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 19139132}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &19139132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19139129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -208,8 +220,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -218,18 +228,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &19139133
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19139129}
   m_CullTransparentMesh: 0
 --- !u!1 &59510013
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59510014}
@@ -246,7 +260,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59510013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -264,11 +279,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59510013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -277,8 +293,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -297,14 +311,16 @@ MonoBehaviour:
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59510013}
   m_CullTransparentMesh: 0
 --- !u!1 &227870893
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227870895}
@@ -320,7 +336,8 @@ GameObject:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227870893}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -460,7 +477,534 @@ MonoBehaviour:
   - SCENE 0
   dialogueShelly: []
   dialogueNaruto: []
-  dialogueCindy: []
+  dialogueCindy:
+  - SCENE 0 ----------------
+  - As you exit the lunchline with your tray, you look around the cafeteria. You spot
+    the table you normally sit at with your friend, but today it's more empty than
+    usual.
+  - You really don't want to sit alone, so you look around to some of the other tables.
+    Many of them are full, but you do notice an empty seat at the table where Cindy
+    Umbrella sits.
+  - 'Maybe you should sit with her! You do need to make some new friends fast, and
+    who better than the daughter of one of the wealthiest families in town. You quickly
+    make your way over to the table and take a seat. '
+  - "C-\u2026"
+  - "P-\u2026 Uh, hi!"
+  - C-Can I help you?
+  - P-Well, yeah. I was wondering if you wanted to be friends.
+  - 'Cindy pauses for a moment, looking almost shocked at the question. A few moments
+    later, as more of her friends arrive at the table, she begins laughing. '
+  - C-Hahaha. Friends? With you? Please.
+  - "P-But\u2026"
+  - "C-Ahem. I believe my friend had reserved that seat, so if you don\u2019t mind\u2026 "
+  - "Disheartened, you grab your tray and get up from the table, letting one of Cindy\u2019s
+    other friends take the seat. As you walk away, she seems to follow you with her
+    gaze."
+  - You look back, but she quickly turns her head away and starts a conversation with
+    the other girls at the table. Weird, for a moment she looked almost regretful.
+  - SCENE 1 --------------
+  - 'After another long day of school, you head back to your locker, ready to pack
+    up your stuff and head home. However, as you are walking down the hallway, some
+    upperclassman shoulders you, sending you backing up into Cindy. She drops some
+    of the notebooks and looks at you angrily. '
+  - "C-Hey, watch where you\u2019re going, you ne\u2019er-do-well! You could have
+    knocked me over."
+  - "P-I\u2019m sorry. I didn\u2019t mean to, I\u2026"
+  - "C-What if I were holding a cup of coffee, or a precious glass statuette. I could\u2019ve
+    been injured, or had my property destroyed. Maybe you should look\u2026 "
+  - As she continues to tell you off, a boy walks towards you from down the hall.
+    It is Annelius Charming, another one of the rich kids of the town. As he approaches,
+    Cindy trails off and turns to him.
+  - A-Hi there, Cindy. I was just wondering if you wanted to go trick or treating
+    with me this Friday. What do you say?
+  - 'Cindy immediately freezes, and begins looking around nervously. '
+  - "C-Uh, right, trick or treating. Halloween,. Uh ... I can\u2019t. Yeah, I can\u2019t,
+    sorry. I already promised to go trick or treating with \u2026 with them! She points
+    at you."
+  - "A-Really? You\u2019re going trick or treating with \u2026 them?"
+  - He looks at you, studying your face intently.
+  - OPTION 1
+  - P-Uh, yeah. We were just talking about the route we want to take through town.
+    We got a little heated, I guess. Haha.
+  - Annelius-Whatever. See you later, Cindy.
+  - 'Cindy: She lets out a sigh. Whew, that was a close one. Thanks for the assist.'
+  - OPTION 1-1
+  - 'Player: That was kind of weird. What was that all about?'
+  - "Cindy: Oh him? That\u2019s Annelius. His parents are closely associated with
+    mine, so he hangs around pretty often. He\u2019s really dull, and quite annoying."
+  - "Player: Why\u2019d you have to lie to him? Why didn\u2019t you just say no."
+  - 'Cindy: How I deal with pests is none of your concern, unless you keep wasting
+    my precious time with pointless questions. '
+  - 'Cindy stoops down to pick up the books she dropped. '
+  - 'Player: I really am sorry about that. It was an accident. '
+  - "Cindy: Don\u2019t worry about it. Just watch where you\u2019re going next time."
+  - She turns from you and heads towards the exit.
+  - OPTION 1-2
+  - 'Player: So, are we really going trick or treating together?'
+  - "Cindy: What? Oh, no. Of course not. I mean, you helped me out, but that doesn\u2019t
+    mean you\u2019re, like, automatically my friend."
+  - "Player: But I helped you out, right? That\u2019s gotta be worth something."
+  - "Cindy: Cindy narrows her eyes, then smiles briefly. I suppose so. Let\u2019s
+    just say I, like, owe you one, or something."
+  - Cindy picks up her books and walks down the hall towards the door.
+  - OPTION 2
+  - "Annelius: \u2026 Riiiiight. Real talkative partner, Cindy. Well, see you later,
+    I guess."
+  - "Cindy: She lets out a sigh. Whew, that was a close one. You could\u2019ve helped
+    a little."
+  - OPTION 2-1
+  - 'Player: That was kind of weird. What was that all about?'
+  - "Cindy: That\u2019s none of your business. You don\u2019t need to concern yourself
+    with my family\u2019s choice in acquaintances. "
+  - 'Cindy stoops down to pick up the books she dropped. '
+  - 'Player: I really am sorry about that. It was an accident. '
+  - 'Cindy: Whatever. Just try not to be so oblivious in the future. You can be a
+    real menace to those around you.'
+  - OPTION 2-2
+  - 'Player: So, are we really going trick or treating together? '
+  - "Cindy: What? Oh, no. Of course not. I can\u2019t be seen frolicking about on
+    Halloween with someone like you.  "
+  - 'Player: But you just said... '
+  - 'Cindy: It was a lie, obviously. It was pretty convenient that you were here,
+    really saved me from an...interesting situation. Anyway, bye now. '
+  - 'Cindy closes her locker, picks up her dropped books, and turns away from you,
+    walking down the hallway. '
+  - SCENE 2 -----------
+  - 'As you walk down the street, you notice Cindy on the other side of the road.
+    Looking both ways, you quickly cross the street and walk up to her. After a moment
+    of recognition, she looks at you, mildly annoyed.  '
+  - "Cindy: Oh, it\u2019s you. What do you want? "
+  - "Player: I was just walking and saw you, so I thought I\u2019d pop over and say
+    hi. What\u2019re you up to? "
+  - "Cindy: I was out for a walk. I need to get my daily 30 minutes of exercise, and
+    think that the silence of the town\u2019s afternoon lull is rather calming. At
+    least it was. So do you need something, or are you just here to waste more of
+    my time? "
+  - OPTION 1
+  - 'Cindy: Sigh. I thought we were on the same page here. It was just a white lie
+    to get Annelius out of my hair. '
+  - 'Player: No, I know, I was just wondering if you had plans for the day. What are
+    you dressing up as? '
+  - "Cindy: Of course I have plans. I\u2019m going trick or treating around the neighborhood;
+    the more festive parts, anyway. And I\u2019m dressing up like a Pretty Princess,
+    as always. The look fits me quite well. What about you? No doubt taping a bunch
+    of cardboard to yourself and calling it a robot costume. Anyway, are we done here? "
+  - 'Player: Wait. You still owe me one for helping you out yesterday, remember? '
+  - "Cindy: Right, well Halloween\u2019s a little out of scope.  "
+  - 'Player. Yeah, I figured. I was more interested in asking if you wanted to hang
+    out for the day? '
+  - "Cindy: Hang out? With you? Well, I guess it can\u2019t be TOO awful. Besides,
+    an Umbrella always keeps her word. But we\u2019re even after this, got it? "
+  - "Player: Haha, no question. I\u2019ve got just the place in mind. "
+  - OPTION 2
+  - "Cindy: Well, I had a rather busy day ahead of me, but I guess I\u2019m gonna
+    have to push that back. It doesn\u2019t seem like this conversation\u2019s going
+    to end any time soon. "
+  - 'Player: Haha, well actually I asked on account of the favor you owe me? '
+  - 'Cindy: Favor? '
+  - 'Player: You know, from helping you deal with Annelius the other day. '
+  - 'Cindy: Right, right, yes...that. Well, what did you have in mind.  '
+  - 'Player:  I was wondering if you wanted to hang out for the day? '
+  - "Cindy: Hang out? With you? Well, I guess it can\u2019t be TOO awful. Besides,
+    an Umbrella always keeps her word. But we\u2019re even after this, got it? "
+  - "Player: Haha, no question. I\u2019ve got just the place in mind. "
+  - PICK UP SCENE HERE
+  - 'After a few minutes of walking, you and Cindy enter into the arcade. You have
+    spent a lot of your time playing the games here, and although she tries to hide
+    it, you catch a look of recognition from Cindy as she eyes some of the games. '
+  - "Cindy: Ah, the arcade. I...haven\u2019t had much experience with such trivial
+    activities, but it\u2019s not the worst place in the world to end up. So? Where
+    shall we start. "
+  - 'For the next few hours, you and Cindy play arcade games together. She is surprisingly
+    good at some of the games you play, despite claiming that she had never seen them
+    before. As you spend time together, you have the opportunity to ask some questions. '
+  - OPTION 1
+  - 'Cindy: You want to know about my family?  '
+  - "Player: Yeah. I\u2019ve always seen them around the town, but they\u2019re usually
+    in their limo. I\u2019ve never really gotten close. They seem so mysterious. "
+  - "Cindy: Oooh, mysterious, huh? Well don\u2019t worry, they\u2019re just as normal
+    as anyone else. Well, except for the fact that they\u2019re rich. They always
+    act differently when they\u2019re around their friends. It\u2019s...kind of strange. "
+  - "Player: Yeah weird. Can\u2019t imagine what that would be like\u2026 "
+  - 'Cindy falls quiet for a moment, and as you look over at her, she seems almost
+    sad. An awkward silence ensues. '
+  - OPTION 1-1
+  - 'Player: Uh...are you okay. '
+  - "Cindy: What...oh, yeah I\u2019m fine. Just, uh, thinking about...stuff. Don\u2019t
+    worry about me, focus on the game. I\u2019m kicking your butt! "
+  - OPTION 1-2
+  - 'Player: Uh...so, do you have any siblings? '
+  - "Cindy: Huh...siblings? No, it\u2019s just me. My parents often say that, being
+    an only child, I\u2019ll have to inherit their business one day. They expect me
+    to be ready to take on the mantle when I\u2019m older. It\u2019s...kind of a lot
+    of pressure.  "
+  - OPTION 2
+  - "Player: So, what\u2019s it like living in your house. It\u2019s huge, like 4
+    times the size of mine. I can\u2019t imagine what it would be like. "
+  - "Cindy: Yeah, I guess you\u2019d want to know what it\u2019s like living on such
+    a large estate. It\u2019s understandable, really. I often catch people out the
+    window staring in awe. It\u2019s really a sight to behold. Inside\u2019s just
+    as lavish as the outside, I\u2019ll have you know. Designer carpets, drapes, sofas;
+    everything you\u2019d expect from the richest family in the town. "
+  - "Player: That\u2019s crazy. You must have, like, so many video games, huh? "
+  - "Cindy: Video games? No, we don\u2019t have anything of that sort. My dad says
+    \u201Cit\u2019s not befitting of a young lady of my stature.\u201D "
+  - OPTION 2-1
+  - 'Cindy: ...Yeah. With such a large house, and parents who are pretty distracted
+    with their work it can get pretty lonely. '
+  - "Player: I\u2019m sorry. Well...if you ever need someone to spend time with or
+    talk to about that, I\u2019ll be around "
+  - 'Cindy looks over at you and smiles '
+  - "Cindy: Thanks. I\u2019ll, uh, I\u2019ll let you know. "
+  - OPTION 2-2
+  - 'Cindy: W-what? Me, sneak out? What kind of girl do you think I am? '
+  - 'Player: Sorry, just wondering. You seem pretty good at these games. '
+  - "Cindy: Hmph. Well sorry if I\u2019m just naturally talented. "
+  - OPTION 3
+  - 'Player: So, how exactly did your family get rich?  '
+  - "Cindy: Well, if you\u2019re so interested in my family\u2019s wealth, I suppose
+    I could tell you. My parents used to tell me this story when they were kids. My
+    mother\u2019s grandfather and his wife lived here, in this very town. They noticed
+    that it was very rainy around here, and that no one had any way of shielding themselves
+    from the rain. Seeing the people in anguish, they were determined to make things
+    right. They slaved away until they were able to produce a light, portable, and
+    stylish shield to block the rain.  "
+  - 'Player: They made umbrellas? '
+  - 'Cindy: Not just any normal umbrella. Stylish umbrellas. Patented Umbrella Brand
+    umbrellas. '
+  - 'Player: Huh. Right. '
+  - 'Cindy: Yeah, I always thought it was a silly story.'
+  - OPTION 3-1
+  - "Player: I mean, it is a pretty dumb story. Obviously your great grandparents
+    didn\u2019t invent umbrellas.  "
+  - "Cindy: Haha, yeah. I don\u2019t really know why my parents insisted on telling
+    me that story when I was younger. Even then it was unbelievable. Maybe it makes
+    them feel good about themselves or something. "
+  - "Player: Forgetting the story, it\u2019s still pretty remarkable that your family
+    got so wealthy just from selling umbrellas. "
+  - 'Cindy: Yeah, it makes more sense if you just suspend your disbelief. '
+  - OPTION 3-2
+  - "Player: Wow, I can\u2019t believe that your grandparents invented the first umbrellas
+    to ever be used in this town. "
+  - "Cindy: Haha, yeah...you\u2019re kidding right. "
+  - 'Player: What? Haha, yeah, of course. Me. Kidding. Obviously. '
+  - 'Cindy: Yeah. Right. '
+  - PICK UP SCENE HERE
+  - 'After spending an hour or so at the arcade, you run out of coins and unfortunately
+    have to leave. '
+  - "Cindy: Well, that was...more fun than expected. I guess you can be pretty good
+    company. When you\u2019re not being petty and annoying, I mean. "
+  - 'Player: Haha, I guess so. '
+  - "Cindy: I should probably be heading home now. Don\u2019t wanna be late for dinner. "
+  - 'Player: Goodnight. See you at school tomorrow. '
+  - SCENE 3 ------------------
+  - HIGH FRIENDSHIP - ------------------
+  - "Later in the afternoon, you head on over to Cindy\u2019s house. You had a good
+    time hanging out with her yesterday, and wanted to follow up with her. You knock
+    on her door, and eventually she answers. "
+  - 'Cindy: Oh, hey. What are you doing here? '
+  - 'Player: Hey Cindy. I had a lot of fun at the arcade the other day, and was wondering
+    if you wanted to head back there again sometime. '
+  - "Cindy: Keep your voice down, my parents could hear you. Look, I had fun hanging
+    out with you too, but you shouldn\u2019t be here. May parents could ... "
+  - "Before she could finish, you are both surprised as you hear a voice from behind
+    you. It\u2019s Annelius, the boy from before. "
+  - "Annelius. Hey there Cindy. And...who are you again? Oh right. You\u2019re the
+    kid from the other side of town. "
+  - 'Cindy: Do you need anything Annelius.  '
+  - "Annelius: Just checking in to see if your plans for Halloween had changed, but
+    clearly\u2026 "
+  - "Cindy: Uh, nope, no change of plans as of yet. Sorry Annelius, guess you\u2019ll
+    have to try again next year. "
+  - "Annelius: Why are you going trick or treating with him, anyway, Cindy? You should
+    be going with someone from your neighborhood, someone around here. Not this loser.
+    Do your parents know you\u2019ve been hanging out with them? Annelius turns toward
+    you. Get lost, dweeb. She shouldn\u2019t be hanging out with you anyway. "
+  - OPTION 1
+  - "Player: No. You shouldn\u2019t be making decisions for her. She should be able
+    to choose who she wants to spend time with, or where she wants to spend that time. "
+  - 'Cindy flashes you a wide smile as Annelius scowls at you. '
+  - "Annelius: What, you think you know what\u2019s best for her? "
+  - 'Player: No, I think she does. '
+  - 'Annelius: Annelius looks from you to Cindy, then back to you. Whatever. You two
+    go trick or treating all you want. '
+  - "Cindy: Wow...thank you. I\u2019ve never really had anyone stand up for me like
+    that. Sometimes, I wish I could say the same thing to my parents. But they\u2019d
+    be so disappointed. "
+  - OPTION 1-1
+  - 'Player: What do you mean? Why would they be disappointed? '
+  - "Cindy: What? I said that out loud? Sorry, you weren\u2019t supposed to hear that. "
+  - "Player: It\u2019s okay. I won\u2019t tell anyone. You can talk to me. "
+  - "Cindy: I don\u2019t hate my parents. Not by any means. It\u2019s just...being
+    their only child, they expect a lot out of me. They\u2019re always telling me
+    how I\u2019m going to inherit the company some day. They say I need to keep up
+    my outward appearance to fit the woman that I will grow into. But what if that\u2019s
+    not what I want. What if I just want to be a normal girl, who doesn\u2019t have
+    to worry about her appearance, or who she hangs out with, or her future reputation?
+    \ "
+  - "Player: Yeah, that makes sense. I can\u2019t imagine being forced into such rigid
+    boundaries. So why don\u2019t you just tell them how you feel? "
+  - "Cindy: No, I couldn\u2019t. They\u2019d hate me. "
+  - "Player: Cindy\u2026 "
+  - 'You hear a voice call from within the house. After a moment, Cindy turns back
+    to you. '
+  - "Cindy: I\u2019ve got to go, sorry. See you around. "
+  - OPTION 1-2
+  - "Player: What\u2019s his problem? "
+  - "Cindy: Annelius? I don\u2019t really know. When his family moved to town last
+    year, they quickly became friends with mine. I guess he felt that our parents\u2019
+    friendship meant that he had to be friends with me too. But I always found him
+    annoying. "
+  - "Player: Yeah, can\u2019t disagree with you there. Why don\u2019t you just tell
+    him how you feel and ask him to leave you alone.  "
+  - "Cindy: Well - I don\u2019t know. My parents like the Charmings. If I were to
+    outright reject their son, I don\u2019t know how they would react. They expect
+    a lot from me, and I don\u2019t want to disappoint them. "
+  - 'Player: That sounds like a lot of pressure. '
+  - "Cindy: Yeah\u2026 "
+  - 'You hear a voice call from within the house. After a moment, Cindy turns back
+    to you. '
+  - "Cindy: I\u2019ve got to go, sorry. See you around. "
+  - OPTION 2
+  - "Player: No. I can go wherever I want, and spend time with whoever I want. You
+    don\u2019t control me. "
+  - 'Annelius scowls at you. '
+  - "Annelius: What are you, some kind of tough guy? You want to go trick or treating
+    with them? Then go ahead. Don\u2019t say I didn\u2019t warn you when your parents
+    find out. "
+  - "Cindy: Wow. Sorry about him, he was even more of a jerk than usual. And...sorry
+    if I was ever like that. Lately, I\u2019ve begun to realize that I\u2019ve been
+    a little quick to judge people. "
+  - OPTION 2-1
+  - "Player: What\u2019s his problem? "
+  - "Cindy: Annelius? I don\u2019t really know. When his family moved to town last
+    year, they quickly became friends with mine. I guess he felt that our parents\u2019
+    friendship meant that he had to be friends with me too. But I always found him
+    annoying. "
+  - "Player: Yeah, can\u2019t disagree with you there. Why don\u2019t you just tell
+    him how you feel and ask him to leave you alone.  "
+  - "Cindy: Well - I don\u2019t know. My parents like the Charmings. If I were to
+    outright reject their son, I don\u2019t know how they would react. They expect
+    a lot from me, and I don\u2019t want to disappoint them. "
+  - 'Player: That sounds like a lot of pressure. '
+  - "Cindy: Yeah\u2026 "
+  - 'You hear a voice call from within the house. After a moment, Cindy turns back
+    to you. '
+  - "Cindy: I\u2019ve got to go, sorry. See you around. "
+  - OPTION 2-2
+  - "Player: Hey, don\u2019t worry about it. So, do you have any plans for tomorrow?"
+  - "Cindy: Right, the arcade. I would like to, but unfortunately I have my family\u2019s
+    Autumbrella Event. It\u2019s the biggest festival for Umbrella umbrellas, where
+    we show off our designs for next season. I-I can\u2019t miss it. Sorry. "
+  - "Player: That\u2019s alright. Maybe I\u2019ll stop by. I\u2019ve always seen the
+    signs in the park, but I just assumed it was a bunch of old people geeking out
+    over umbrellas."
+  - "Cindy: Haha, that\u2019s pretty much it. It\u2019s not very exciting so, uh,
+    there\u2019s really no reason to stop by.  "
+  - 'You hear a voice call from within the house. After a moment, Cindy turns back
+    to you. '
+  - "Cindy: I\u2019ve got to go, sorry. See you around. "
+  - LOW FRIENDSHIP --------------
+  - "As you\u2019re out walking on the street, you see Cindy leaving the general store
+    with a group of friends, a plastic bag in her hand. You walk up to her. "
+  - "Player: Hey Cindy, what\u2019s up.  "
+  - 'Cindy: Oh, you again.  '
+  - 'Player: I was just wondering if you wanted to hang out again sometime tonight.
+    Just got my allowance, so we could play at least 3 more rounds of Marvel vs Capcom. '
+  - 'Cindy: What? And why would I want to do that? '
+  - 'Player: Well...I just thought after yesterday...  '
+  - 'Cindy: What, that I would be suddenly swayed into being your friend? I told you
+    yesterday, we were even after that. '
+  - "Player: But\u2026 "
+  - "Cindy\u2019s Friends: Cindy, come on, we should get going. "
+  - 'Cindy turns to her friends, and says something to them as they walk away. You
+    hear someone walking up to you from behind. You turn to find Annelius standing
+    there. '
+  - "Annelius: Ouch. Sorry bro, that\u2019s gotta hurt. "
+  - 'Player: I thought we had fun together yesterday, but I guess not.  '
+  - "Annelius: I don\u2019t know. Maybe you\u2019re just not cool enough. "
+  - 'Player: Not cool enough? '
+  - "Annelius: Yeah. Your cool status is real important to us upstanding kids in the
+    rich part of town. If you want to hang with Cindy, you gotta prove you\u2019re
+    cool.  "
+  - 'Player: Well, how can I do that? '
+  - 'Annelius: Hm, good question. Lemme think...Oh, I know! You should pull a prank
+    on her. '
+  - 'Player: A prank? That sounds kinda mean. '
+  - "Annelius: What? Nah, on our side of town we do it all the time. It\u2019s a way
+    to show how cool you are. She got me pretty good a few days ago. I was planning
+    one for tomorrow, during her family\u2019s Autumbrella Festival in the park. They
+    always show off their new designer umbrellas for the upcoming year, and they usually
+    have her say something to the crowd. It would be the perfect chance to pull a
+    prank. "
+  - 'Player: Are you sure? '
+  - "Annelius: Yeah, for sure. She\u2019ll think it\u2019s hilarious, and then she\u2019ll
+    be totally down to hang. Meet me at the park tomorrow, I\u2019ll fill you in then. "
+  - SCENE 4 ---------------
+  - HIGH FRIENDSHIP ----------------
+  - 'As you walk through the park, you see umbrellas and Umbrellas everywhere you
+    look. Eventually, you find the Umbrella you are looking for, as you spy Cindy
+    sitting on a park bench talking with one of your teachers. She is holding a designer
+    umbrella with an intricate jack-o-lantern on it. When she is done talking, you
+    approach her. '
+  - "Cindy: Oh, hey. I wasn\u2019t expecting to see you here.  "
+  - "Player: Yeah, I got pretty bored, so I figured I\u2019d stop by. "
+  - 'Cindy: You got so bored that you saw an umbrella festival and thought it sounded
+    fun? '
+  - 'Player: Haha apparently. '
+  - OPTION 1
+  - 'Player: So. The Autumbrella Festival. What exactly is this thing again.'
+  - "Cindy: Well, every year Umbrella umbrellas produces a new line of designer umbrellas,
+    starting with unique autumn designs. So every Halloween we show off our new designs
+    at this festival. And my parents always make me come, and carry a stupid umbrella
+    even though it\u2019s so windy I feel like I\u2019m gonna be swept away. And they
+    always make me give a speech. I never have anything to talk about, so I just say
+    something dumb about how much I like umbrellas. It usually gets a round of applause. "
+  - "Player: If you hate it so much, why don\u2019t you just leave? Go do something
+    you enjoy? "
+  - "Cindy: What? No, I couldn\u2019t do that. My parents want me here, they think
+    it\u2019s important that I see how the business gets done, you know. "
+  - OPTION 2
+  - "Player: I haven\u2019t seen your parents around. They\u2019re somewhere around
+    here, right? "
+  - 'Cindy points to the large mass of people at the center of the park '
+  - "Cindy: Yeah, they\u2019re somewhere in that mass of people. They\u2019re probably
+    signing umbrellas or something. "
+  - "Player: Cool. So, I\u2019m guessing they\u2019re forcing to be here, huh? "
+  - 'Cindy: What? What makes you say that? '
+  - "Player: Oh, I don\u2019t know, something about the way you called the festival
+    boring earlier.  "
+  - "Cindy: Fair enough. Yeah, I never really liked the Autumbrella Festival. It\u2019s
+    just a bunch of people with umbrellas. It\u2019s not even raining. Or sunny. There
+    is no reason to carry around umbrellas, and yet here we are. It\u2019s kind of
+    dumb. "
+  - "Player: If you hate it so much, why don\u2019t you just leave? Go do something
+    you enjoy? "
+  - "Cindy: What? No, I couldn\u2019t do that. My parents want me here, they think
+    it\u2019s important that I see how the business gets done, you know. "
+  - SCENE MEETS UP HERE
+  - OPTION 1
+  - DEFENDED CINDY
+  - 'Player: But what about what you said the other day? About wanting to stand up
+    to your parents. Are you really going to let them control you your whole life.
+    Or are you going to be your own person.  '
+  - "Cindy: You know what? You\u2019re right. I can be whoever I want. I don\u2019t
+    need to mindlessly obey them. And if they\u2019re disappointed in me, well...
+    I guess I\u2019ll just have to deal with that. "
+  - NOT DEFENDED
+  - 'Player: Are you going to let them control you your whole life? '
+  - 'Cindy: What else am I supposed to do? '
+  - 'Player: You could tell them how you feel. You could ditch this festival and do
+    your own thing. '
+  - "Cindy: Leave them here? No way, you\u2019re crazy. They\u2019d be so disappointed
+    in me. I couldn\u2019t do that to them. "
+  - 'Player: Are you sure? '
+  - 'Cindy: Yeah. But, I have thought about trick or treating later, and decided that
+    I want to give you a chance to prove your trick or treating prowess. Who knows,
+    maybe you have a better route than the one I normally take. '
+  - OPTION 2
+  - "Cindy: Yeah. As much as I want to leave this boring event, they want me here.
+    And I don\u2019t want to disappoint them.  "
+  - "Player: I\u2019m sorry they make you do stuff like this.  "
+  - "Cindy: Hey, at least this year it wasn\u2019t SO boring to drive away all the
+    kids. This is the first time I\u2019ve ever had an interesting conversation at
+    one of these. "
+  - "Player: Hey, that\u2019s what I\u2019m here for. Well, I should probably get
+    home. "
+  - 'Cindy: Wait. This festival only goes on for another hour, so I should be able
+    to, you know, go trick or treating after this. '
+  - 'Player: Really? I thought you had other plans? '
+  - "Cindy: Well, I always go trick or treating with the same people every year. Maybe
+    it\u2019s time I changed it up. "
+  - LOW FRIENDSHIP ----------------
+  - 'As you walk through the park, you see umbrellas and Umbrellas everywhere you
+    look. Eventually, you catch site of Cindy sitting on a park bench near the road,
+    as well as Annelius, who beckons you from behind a tent.  '
+  - "Annelius: Alright, so here\u2019s the plan. There, on the far end of the park,
+    is the stage where Cindy will be giving her short speech. I already set up a bucket
+    full of water above the stage."
+  - "A-All I need you to do is to use this sling to knock it down while she\u2019s
+    giving her speech. She\u2019ll get soaked, we\u2019ll all have a good laugh, and
+    then we\u2019ll go trick or treating together later. "
+  - OPTION 1
+  - 'Annelius hands you a sling and a stone. '
+  - "Annelius: Make sure you hit it before she\u2019s done with her speech. "
+  - "Player: Right. I won\u2019t mess this up, don\u2019t worry. "
+  - "You continue to hang around the festival, making sure to try and avoid Cindy.
+    Eventually, everyone quiets down, and you see Cindy\u2019s dad walk out on the
+    stage. He briefly thanks everyone for coming out and talks about the upcoming
+    line of designer umbrellas. Then, he welcomes Cindy on to the stage to give a
+    short speech.  "
+  - 'Cindy takes the center of the stage, and then begins talking about how much she
+    likes umbrellas. You lift up the sling and aim the stone towards the bucket suspended
+    above her head. '
+  - OPTION 1-1
+  - 'You release the stone, and the bucket tips, sending water cascading over Cindy.
+    Now soaked, she looks out at you, furious. There is an awkward silence, until
+    finally Annelius stands up and walks towards the stage.  '
+  - 'Annelius: Cindy, are you okay?  '
+  - 'Cindy: Yeah, just a little cold and wet. She glares at you. What the hell is
+    wrong with you? '
+  - 'Player: What? It was just a fun prank, right Annelius? '
+  - "Annelius: You\u2019re messed up, you know that. Come on, Cindy, I can walk you
+    home. "
+  - "Player: But...but\u2026 "
+  - OPTION 1-2
+  - "You look up at the bucket, but can\u2019t bring yourself to be so mean to Cindy.
+    You lower the sling and look back at Annelius. He looks at you angrily, and then
+    raises another sling, taking aim at the bucket. "
+  - "You don\u2019t have enough time to shout out. You have to act. You run towards
+    the stage, grabbing an umbrella from one of the display stands nearby. You open
+    the umbrella and hold it above Cindy\u2019s head just in time, as the water cascades
+    over the designer rain shield. "
+  - 'Cindy: What are you doing? '
+  - "Player: Saving you from Annelius\u2019s prank. I\u2019m sorry, I almost let him
+    go through with this.  "
+  - "You fill Cindy and her parents in on Annelius\u2019s plan, and your role in the
+    prank. His parents scold him for the prank, while your parents scold you for going
+    along with it. However, Cindy is grateful for your help, and decides that she
+    will go trick or treating with you as a thank you. "
+  - OPTION 2
+  - 'Player: Uh, right. Sure. '
+  - 'Annelius hands you a sling and a stone, but you have no intention of using it.
+    As soon as you are out of earshot from Annelius, you immediately head to Cindy. '
+  - "Cindy: I\u2019m trying to prepare for my speech here, if you don\u2019t mind.
+    \ "
+  - "Player: I\u2019m sorry. But I\u2019ve come to warn you of an attempt on your
+    life. Or, at least your comfort.  "
+  - 'Cindy: What do you mean? '
+  - "Player: Annelius, that guy from earlier in the week, planned to pull a prank
+    on you today and tried to get me involved with it. But I didn\u2019t really want
+    to go along with it, so I came to warn you. "
+  - 'Cindy: Really? Well, thank you, I guess. '
+  - "Cindy told her parents about the prank, and they removed the bucket from the
+    stage. Annelius\u2019s parents find him and scold him for the attempted prank.
+    The rest of the Autumbrella Festival went swimmingly, and, as a thanks for helping
+    her, Cindy decides to go trick or treating with you. "
+  - SCENE 5 -------------------------------
+  - TRUE ENDING -------------------------
+  - You and Cindy decide to skip out on the Autumbrella Festival, leaving it behind
+    and heading back to the arcade. This time, it was Cindy's idea.
+  - After you guys had your fun, you decided to walk Cindy back home and help her
+    confront her parents.
+  - She talked to them about their expectations and the stress it put her under, and
+    how she wanted to be her own person.
+  - They were surprisingly understanding. As it turned out, they never really knew
+    just how much stress they were putting their daughter under.
+  - Afterwards, Cindy thanked you for helping her build up the courage to stand up
+    to her parents. She decided she would leave behind her old friend group and go
+    trick or treating with you this year.
+  - You did it! You found someone to go trick or treating with! Congratulations!
+  - GOOD ENDING ------------------------
+  - Cindy, as thanks for your help, decided to join you in trick or treating
+  - You're glad you didn't have to go trick or treating alone, but feel like you could
+    have come out of this with a much stronger friendship if you had made some better
+    choices...
+  - 
+  - BAD ENDING --------------------------
+  - 'Annelius blames you for the prank that she fell for, and then he and Cindy go
+    trick or treating. '
+  - You failed to go trick or treating with Cindy.
   b1: {fileID: 0}
   b2: {fileID: 0}
   halfWidth1: 0
@@ -480,7 +1024,8 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227870893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -493,7 +1038,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 238567039}
@@ -509,7 +1055,8 @@ GameObject:
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238567037}
   m_Enabled: 1
   m_CastShadows: 0
@@ -519,6 +1066,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
+  m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -528,6 +1076,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -555,7 +1104,8 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238567037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -568,7 +1118,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 564035746}
@@ -585,7 +1136,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564035745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 5}
@@ -603,11 +1155,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564035745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -616,8 +1169,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
@@ -636,14 +1187,16 @@ MonoBehaviour:
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564035745}
   m_CullTransparentMesh: 0
 --- !u!1 &696203953
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696203956}
@@ -660,20 +1213,24 @@ GameObject:
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696203953}
   m_Enabled: 1
 --- !u!20 &696203955
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696203953}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -707,7 +1264,8 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696203953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
@@ -720,7 +1278,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 724707059}
@@ -738,7 +1297,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724707058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -756,11 +1316,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724707058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -774,34 +1335,36 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 724707061}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &724707061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724707058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -810,8 +1373,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 28b4b4a7dbdea2c4d958110efbf9b0d1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -820,18 +1381,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &724707062
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724707058}
   m_CullTransparentMesh: 0
 --- !u!1 &726233093
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726233095}
@@ -847,7 +1412,8 @@ GameObject:
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726233093}
   m_Enabled: 1
   m_CastShadows: 0
@@ -857,6 +1423,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -866,6 +1433,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -893,7 +1461,8 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726233093}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.25, y: -3.97, z: 0}
@@ -906,7 +1475,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 950494279}
@@ -923,7 +1493,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950494278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -941,11 +1512,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950494278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -954,8 +1526,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -974,14 +1544,16 @@ MonoBehaviour:
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950494278}
   m_CullTransparentMesh: 0
 --- !u!1 &1437010316
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1437010319}
@@ -998,11 +1570,12 @@ GameObject:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437010316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -1016,11 +1589,12 @@ MonoBehaviour:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437010316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -1030,7 +1604,8 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437010316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1043,7 +1618,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1545396250}
@@ -1059,7 +1635,8 @@ GameObject:
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545396248}
   m_Enabled: 1
   m_CastShadows: 0
@@ -1069,6 +1646,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 1
+  m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -1078,6 +1656,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1105,7 +1684,8 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545396248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.05, y: -0.83, z: -83.55205}
@@ -1118,7 +1698,8 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1713373287}
@@ -1136,7 +1717,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713373286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1155,11 +1737,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713373286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1173,34 +1756,36 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1713373289}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1713373289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713373286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1209,8 +1794,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1219,18 +1802,22 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1713373290
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713373286}
   m_CullTransparentMesh: 0
 --- !u!1 &1848804250
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1848804254}
@@ -1248,11 +1835,12 @@ GameObject:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848804250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -1264,11 +1852,12 @@ MonoBehaviour:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848804250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
@@ -1285,7 +1874,8 @@ MonoBehaviour:
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848804250}
   m_Enabled: 1
   serializedVersion: 3
@@ -1305,7 +1895,8 @@ Canvas:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848804250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1328,7 +1919,8 @@ RectTransform:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1879031891}
@@ -1345,7 +1937,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879031890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1363,11 +1956,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879031890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1376,8 +1970,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -1396,14 +1988,16 @@ MonoBehaviour:
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879031890}
   m_CullTransparentMesh: 0
 --- !u!1 &1889689504
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889689505}
@@ -1420,7 +2014,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889689504}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1438,11 +2033,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889689504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1451,8 +2047,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 15
@@ -1471,14 +2065,16 @@ MonoBehaviour:
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889689504}
   m_CullTransparentMesh: 0
 --- !u!1 &2136038186
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136038187}
@@ -1496,7 +2092,8 @@ GameObject:
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136038186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1516,11 +2113,12 @@ RectTransform:
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136038186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -1534,34 +2132,36 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2136038189}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2136038189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136038186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1570,8 +2170,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -1580,10 +2178,13 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &2136038190
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136038186}
   m_CullTransparentMesh: 0
