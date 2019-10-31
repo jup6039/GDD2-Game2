@@ -70,10 +70,10 @@ public class InteractionHandler : MonoBehaviour
         // set up dictionary
         if (!dicInit)
         {
-            interactionScene.Add("superman", 1);
-            interactionScene.Add("naruto", 1);
-            interactionScene.Add("shelly", 1);
-            interactionScene.Add("cindy", 1);
+            interactionScene.Add("superman", 0);
+            interactionScene.Add("naruto", 0);
+            interactionScene.Add("shelly", 0);
+            interactionScene.Add("cindy", 0);
 
             dicInit = true;
         }
@@ -272,6 +272,75 @@ public class InteractionHandler : MonoBehaviour
                                 nameText.text = "";
                                 CheckClick();
                                 break;
+                        }
+                        break;
+
+                    case 0:
+                        switch(line)
+                        {
+                            case 35:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 36:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 37:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 40:
+                                text.text = dialogue[line];
+                                nameText.text = "Player";
+                                CheckClick();
+                                break;
+                            case 41:
+                                text.text = dialogue[line];
+                                nameText.text = "Superman Jones";
+                                CheckClick();
+                                break;
+                            case 43:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckSceneEnd(1);
+                                break;
+                            default:
+                                text.text = dialogue[line];
+                                nameText.text = "";
+                                CheckClick();
+                                break;
+                        }
+                        break;
+
+                    case 2:
+                        switch (line)
+                        {
+
+                        }
+                        break;
+
+                    case 3:
+                        switch (line)
+                        {
+
+                        }
+                        break;
+
+                    case 4:
+                        switch (line)
+                        {
+
+                        }
+                        break;
+
+                    case 5:
+                        switch (line)
+                        {
+
                         }
                         break;
                 }
